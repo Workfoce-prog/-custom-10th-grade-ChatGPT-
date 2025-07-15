@@ -40,8 +40,8 @@ def update_points_and_badges(username, feature):
     # Award badges
     for key, badge_data in BADGES.items():
         if df.at[user_row, key] >= badge_data["threshold"]:
-            if badge_data["badge"] not in df.at[user_row, "badges"]:
-                df.at[user_row, "badges"] += f"{badge_data['badge']} "
+           if badge_data["badge"] not in df.at[user_row, "badges"]:
+    df.at[user_row, "badges"] += f"{badge_data['badge']} "
 
     df.to_csv(log_path, index=False)
 
